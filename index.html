@@ -1,66 +1,296 @@
-<section>
-    <h2>Projects</h2>
-    <div style="margin-bottom: 40px;">
-        <h3>Self Balancing Bot</h3>
-        <p>
-            <strong>Description:</strong> Self Balancing Bot using PID controller.
-            <br>
-            <iframe 
-                width="410" 
-                height="240" 
-                src="https://youtu.be/8FHIHh7ZqvA?si=cvX_Qh2LeaJwswKJ" 
-                frameborder="0" 
-                allowfullscreen 
-                style="margin: 10px 0;">
-            </iframe>
-        </p>
-    </div>
-    
-    <div style="margin-bottom: 40px;">
-        <h3>Cosmo Logistics Hackathon Project</h3>
-        <p>
-            <strong>Part 1:</strong> Computer Vision-Based Pick and Place Routine using UR5 (Simulation)
-            <br>
-            <iframe 
-                width="410" 
-                height="240" 
-                src="https://www.youtube.com/embed/2rUX8lKakT0" 
-                frameborder="0" 
-                allowfullscreen 
-                style="margin: 10px 0;">
-            </iframe>
-        </p>
-        <p>
-            <strong>Part 2:</strong> Automated Mobile Robot Warehouse Payload Delivery using NAV2 Stack (Simulation)
-            <br>
-            <iframe 
-                width="410" 
-                height="240" 
-                src="https://www.youtube.com/embed/JmQVWqmK0H8" 
-                frameborder="0" 
-                allowfullscreen 
-                style="margin: 10px 0;">
-            </iframe>
-        </p>
-    </div>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labeeb Nassar - Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #1e293b; /* slate-800 */
+        }
+        .section-title {
+            color: #0f172a; /* slate-900 */
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #e2e8f0; /* slate-200 */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .tag {
+            background-color: #f1f5f9; /* slate-100 */
+            color: #475569; /* slate-600 */
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #e2e8f0;
+            border-radius: 0.5rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
 
-    <div style="margin-bottom: 40px;">
-        <h3>Automated BB-8 Bot</h3>
-        <p>
-            <strong>Description:</strong> An automated version of the BB-8 Star Wars Droid using the hamster wheel mechanism.
-        </p>
-        <p>
-            <strong>Photos:</strong>
-            <br>
-            <img 
-                src="https://raw.githubusercontent.com/Labeeb1234/Portfolio/main/projects/images/BB-8_prototype.jpg" 
-                alt="BB-8 Prototype" 
-                style="width: 400px; height: auto; margin: 10px 0; border: 1px solid #ccc; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);">
-            <br>
-            <img 
-                src="https://raw.githubusercontent.com/Labeeb1234/Portfolio/main/projects/images/Internal_mobile_robot.jpg" 
-                alt="Internal Mobile Robot Setup" 
-                style="width: 400px; height: auto; margin: 10px 0; border: 1px solid #ccc; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);">
-        </p>
-    </div>
-</section>
+    <!-- Header & Navigation -->
+    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="text-2xl font-bold section-title">Labeeb Nassar</a>
+                <nav class="hidden md:flex md:space-x-8">
+                    <a href="#experience" class="text-slate-600 hover:text-slate-900 transition-colors">Experience</a>
+                    <a href="#education" class="text-slate-600 hover:text-slate-900 transition-colors">Education</a>
+                    <a href="#projects" class="text-slate-600 hover:text-slate-900 transition-colors">Projects</a>
+                    <a href="#skills" class="text-slate-600 hover:text-slate-900 transition-colors">Skills</a>
+                    <a href="#contact" class="text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center mb-20 md:mb-24">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight section-title mb-4">Labeeb Nassar</h1>
+            <p class="text-xl md:text-2xl text-slate-600 font-medium mb-8">Robotics | Artificial Intelligence | Mechanical Engineering</p>
+            <div class="flex justify-center items-center space-x-6">
+                <a href="mailto:labeebranassar@gmail.com" class="text-slate-500 hover:text-slate-800"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                <!-- IMPORTANT: Replace '#' with your actual LinkedIn URL -->
+                <a href="#" class="text-slate-500 hover:text-slate-800"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                <!-- IMPORTANT: Replace '#' with your actual GitHub URL -->
+                <a href="#" class="text-slate-500 hover:text-slate-800"><i data-lucide="github" class="w-6 h-6"></i></a>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="mb-20 md:mb-24">
+            <h2 class="text-3xl font-bold section-title mb-10 text-center">Work Experience</h2>
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-slate-200">
+                
+                <!-- Job 1: UST Developer-III -->
+                <div class="relative flex items-start">
+                    <div class="w-10 flex-shrink-0 text-center">
+                        <div class="bg-slate-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">U</div>
+                    </div>
+                    <div class="ml-6 flex-grow">
+                        <div class="card p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-slate-900">Developer-III</h3>
+                                    <p class="text-slate-700 font-medium">UST</p>
+                                </div>
+                                <p class="text-sm text-slate-500">July 2024 - Present</p>
+                            </div>
+                            <ul class="mt-4 list-disc list-inside text-slate-600 space-y-2">
+                                <li>Conducting R&D in robotic systems automation (drones, mobile robots) using ESP32-microROS, ROS2, and NAV2.</li>
+                                <li>Developing simulation environments and Digital Twin solutions for warehouse automation with Cobots and AMRs.</li>
+                                <li>Developing and validating computer vision algorithms for object detection and real-time visual analytics.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2: UST Internship -->
+                <div class="relative flex items-start">
+                     <div class="w-10 flex-shrink-0 text-center">
+                        <div class="bg-slate-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">U</div>
+                    </div>
+                    <div class="ml-6 flex-grow">
+                        <div class="card p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-slate-900">Internship Trainee</h3>
+                                    <p class="text-slate-700 font-medium">UST</p>
+                                </div>
+                                <p class="text-sm text-slate-500">Jan 2024 - Aug 2023</p>
+                            </div>
+                            <ul class="mt-4 list-disc list-inside text-slate-600 space-y-2">
+                                <li>Enhanced upper layer navigation stack for mobile robotics using ROS2-NAV2 framework.</li>
+                                <li>Developed custom UI endpoints for robotic systems using React JS and Robot Web Tools.</li>
+                                <li>Worked on software (IsaacSim, Gazebo) and hardware (assembly, PID control) for AMRs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3: IIT Palakkad Internship -->
+                 <div class="relative flex items-start">
+                     <div class="w-10 flex-shrink-0 text-center">
+                        <div class="bg-slate-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">IIT</div>
+                    </div>
+                    <div class="ml-6 flex-grow">
+                        <div class="card p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-slate-900">Summer Intern</h3>
+                                    <p class="text-slate-700 font-medium">IIT Palakkad I-Hub Foundation</p>
+                                </div>
+                                <p class="text-sm text-slate-500">May 2022 - July 2022</p>
+                            </div>
+                            <ul class="mt-4 list-disc list-inside text-slate-600 space-y-2">
+                                <li>Worked on the fabrication of components for a solar-powered glider capable of continuous flight.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="mb-20 md:mb-24">
+            <h2 class="text-3xl font-bold section-title mb-10 text-center">Education</h2>
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-slate-200">
+                
+                <!-- Education 1: IIT Palakkad -->
+                <div class="relative flex items-start">
+                    <div class="w-10 flex-shrink-0 text-center">
+                        <div class="bg-slate-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">IIT</div>
+                    </div>
+                    <div class="ml-6 flex-grow">
+                        <div class="card p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-slate-900">B.Tech in Mechanical Engineering</h3>
+                                    <p class="text-slate-700 font-medium">Indian Institute of Technology, Palakkad</p>
+                                </div>
+                                <p class="text-sm text-slate-500">2020 - 2024</p>
+                            </div>
+                            <p class="mt-4 text-slate-600">Cumulative GPA: 9.22 / 10.0</p>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-20 md:mb-24">
+            <h2 class="text-3xl font-bold section-title mb-10 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project 1: Cosmo Logistics -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Cosmo Logistics</h3>
+                    <p class="text-slate-600 mb-4">Warehouse automation project for an IIT-Bombay hackathon. Involved UR5 manipulators, computer vision (Aruco markers), and a 4WD mobile robot using ROS2 NAV2 stack with EKF sensor fusion.</p>
+                    <!-- DEMO VIDEO: Replace the src attribute with your video embed URL -->
+                    <div class="video-container mb-4">
+                        <iframe src="" title="Cosmo Logistics Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">View on GitHub &rarr;</a>
+                </div>
+
+                <!-- Project 2: BB-8 Droid Replica -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">BB-8 Droid Replica</h3>
+                    <p class="text-slate-600 mb-4">A functional replica of the spherical BB-8 droid using a hamster wheel mechanism. Integrated Husky lens for object following capabilities and performed structural simulations in Fusion360.</p>
+                    <!-- DEMO VIDEO: Replace the src attribute with your video embed URL -->
+                    <div class="video-container mb-4">
+                         <iframe src="" title="BB-8 Droid Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                     <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">View Project Details &rarr;</a>
+                </div>
+
+                <!-- Project 3: Windshaper -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Windshaper</h3>
+                    <p class="text-slate-600 mb-4">Designed and developed an in-house windshaper to generate various wind profiles. Utilized Fusion 360 for design, Ansys Fluent for simulation, and fabricated a prototype with BLDC motors.</p>
+                    <!-- DEMO VIDEO: Replace the src attribute with your video embed URL -->
+                    <div class="video-container mb-4">
+                        <iframe src="" title="Windshaper Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                     <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">View Project Details &rarr;</a>
+                </div>
+
+                <!-- Project 4: Solar Powered Glider -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Solar Powered Glider</h3>
+                    <p class="text-slate-600 mb-4">Developed a prototype solar-powered glider for acquiring high-altitude atmospheric data. Performed structural analysis on glider components using Ansys and Fusion360.</p>
+                    <!-- DEMO VIDEO: Replace the src attribute with your video embed URL -->
+                    <div class="video-container mb-4">
+                        <iframe src="" title="Solar Glider Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                     <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">View Project Details &rarr;</a>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="mb-20 md:mb-24">
+            <h2 class="text-3xl font-bold section-title mb-10 text-center">Technical Skills</h2>
+            <div class="card p-8">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <!-- Add your skills as tags -->
+                    <span class="tag">NVIDIA IsaacSim</span>
+                    <span class="tag">ROS & ROS2</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">NAV2</span>
+                    <span class="tag">Moveit2</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">Gazebo Sim</span>
+                    <span class="tag">Fusion 360</span>
+                    <span class="tag">Solidworks</span>
+                    <span class="tag">Ansys</span>
+                    <span class="tag">MicroROS</span>
+                    <span class="tag">Robot Web Tools</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="text-center">
+            <h2 class="text-3xl font-bold section-title mb-4">Contact</h2>
+            <p class="max-w-xl mx-auto text-slate-600 mb-8">
+                I'm always open to discussing new projects, research, or opportunities in robotics and automation.
+            </p>
+            <a href="mailto:labeebranassar@gmail.com" class="inline-block bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg hover:bg-slate-900 transition-all shadow-lg">
+                Email Me
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 mt-20 md:mt-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-slate-500">
+            <p>&copy; 2024 Labeeb Nassar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
