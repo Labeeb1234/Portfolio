@@ -1,296 +1,606 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labeeb Nassar - Portfolio</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* slate-50 */
-            color: #1e293b; /* slate-800 */
-        }
-        .section-title {
-            color: #0f172a; /* slate-900 */
-        }
-        .card {
-            background-color: white;
-            border: 1px solid #e2e8f0; /* slate-200 */
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-        .tag {
-            background-color: #f1f5f9; /* slate-100 */
-            color: #475569; /* slate-600 */
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #e2e8f0;
-            border-radius: 0.5rem;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labeeb Nassar</title>
+  <meta name="description" content="Labeeb Nassar — robotics, autonomous systems, computer vision, and simulation portfolio." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #5f6368;
+      --line: #e7e7e7;
+      --soft: #f7f7f7;
+      --maxw: 920px;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
+    }
+
+    .nav-inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    header {
+      padding: 5rem 0 2.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1, h2, h3, h4, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+      margin-bottom: 0.9rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .lead {
+      max-width: 64ch;
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      margin-top: 1.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .meta a {
+      color: var(--text);
+      border-bottom: 1px solid var(--line);
+    }
+
+    main {
+      padding-bottom: 4rem;
+    }
+
+    section {
+      padding: 2.25rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stack {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .skills span {
+      padding: 0.45rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .project {
+      padding: 1.25rem 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .project:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .project-top {
+      margin-bottom: 0.9rem;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .project-links a,
+    .project-links span {
+      font-size: 0.94rem;
+      color: var(--text);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project ul {
+      margin: 0.65rem 0 0;
+      padding-left: 1.15rem;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-slot {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--soft);
+    }
+
+    .media-placeholder,
+    .media-slot img,
+    .media-slot iframe,
+    .media-slot video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+      border: 0;
+      background: #f3f3f3;
+    }
+
+    .media-placeholder {
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .media-meta {
+      padding: 0.8rem 0.95rem 0.95rem;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    footer {
+      padding: 1.5rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 820px) {
+      .media-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.8rem 0;
+      }
+
+      header {
+        padding-top: 3.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">Labeeb Nassar</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Header & Navigation -->
-    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <a href="#" class="text-2xl font-bold section-title">Labeeb Nassar</a>
-                <nav class="hidden md:flex md:space-x-8">
-                    <a href="#experience" class="text-slate-600 hover:text-slate-900 transition-colors">Experience</a>
-                    <a href="#education" class="text-slate-600 hover:text-slate-900 transition-colors">Education</a>
-                    <a href="#projects" class="text-slate-600 hover:text-slate-900 transition-colors">Projects</a>
-                    <a href="#skills" class="text-slate-600 hover:text-slate-900 transition-colors">Skills</a>
-                    <a href="#contact" class="text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
-                </nav>
-            </div>
+  <header id="home">
+    <div class="container">
+      <div class="eyebrow">Robotics · Autonomous Systems · Computer Vision</div>
+      <h1>Building deployable robotic systems, perception pipelines, and simulation-driven automation workflows.</h1>
+      <p class="lead">
+        I am Labeeb Nassar, a robotics engineer working across autonomous systems, robot simulation, computer vision, embedded integration, and deployment-focused automation.
+      </p>
+      <div class="meta">
+        <span>Thrissur, Kerala, India</span>
+        <a href="mailto:labeebranassar@gmail.com">labeebranassar@gmail.com</a>
+        <a href="tel:+919633301112">+91-9633301112</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container stack">
+        <div>
+          <h2>About</h2>
+          <p>
+            B.Tech in Mechanical Engineering from IIT Palakkad with a GPA of 9.22. My current work at UST focuses on robotics automation for drones and mobile robots using ROS2, NAV2, PX4, MAVSDK, and MicroROS, along with digital twin simulation in NVIDIA IsaacSim and embedded robotic platform integration.
+          </p>
         </div>
-    </header>
-
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-
-        <!-- Hero Section -->
-        <section id="hero" class="text-center mb-20 md:mb-24">
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight section-title mb-4">Labeeb Nassar</h1>
-            <p class="text-xl md:text-2xl text-slate-600 font-medium mb-8">Robotics | Artificial Intelligence | Mechanical Engineering</p>
-            <div class="flex justify-center items-center space-x-6">
-                <a href="mailto:labeebranassar@gmail.com" class="text-slate-500 hover:text-slate-800"><i data-lucide="mail" class="w-6 h-6"></i></a>
-                <!-- IMPORTANT: Replace '#' with your actual LinkedIn URL -->
-                <a href="#" class="text-slate-500 hover:text-slate-800"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                <!-- IMPORTANT: Replace '#' with your actual GitHub URL -->
-                <a href="#" class="text-slate-500 hover:text-slate-800"><i data-lucide="github" class="w-6 h-6"></i></a>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="mb-20 md:mb-24">
-            <h2 class="text-3xl font-bold section-title mb-10 text-center">Work Experience</h2>
-            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-slate-200">
-                
-                <!-- Job 1: UST Developer-III -->
-                <div class="relative flex items-start">
-                    <div class="w-10 flex-shrink-0 text-center">
-                        <div class="bg-slate-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">U</div>
-                    </div>
-                    <div class="ml-6 flex-grow">
-                        <div class="card p-6">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h3 class="text-xl font-semibold text-slate-900">Developer-III</h3>
-                                    <p class="text-slate-700 font-medium">UST</p>
-                                </div>
-                                <p class="text-sm text-slate-500">July 2024 - Present</p>
-                            </div>
-                            <ul class="mt-4 list-disc list-inside text-slate-600 space-y-2">
-                                <li>Conducting R&D in robotic systems automation (drones, mobile robots) using ESP32-microROS, ROS2, and NAV2.</li>
-                                <li>Developing simulation environments and Digital Twin solutions for warehouse automation with Cobots and AMRs.</li>
-                                <li>Developing and validating computer vision algorithms for object detection and real-time visual analytics.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Job 2: UST Internship -->
-                <div class="relative flex items-start">
-                     <div class="w-10 flex-shrink-0 text-center">
-                        <div class="bg-slate-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">U</div>
-                    </div>
-                    <div class="ml-6 flex-grow">
-                        <div class="card p-6">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h3 class="text-xl font-semibold text-slate-900">Internship Trainee</h3>
-                                    <p class="text-slate-700 font-medium">UST</p>
-                                </div>
-                                <p class="text-sm text-slate-500">Jan 2024 - Aug 2023</p>
-                            </div>
-                            <ul class="mt-4 list-disc list-inside text-slate-600 space-y-2">
-                                <li>Enhanced upper layer navigation stack for mobile robotics using ROS2-NAV2 framework.</li>
-                                <li>Developed custom UI endpoints for robotic systems using React JS and Robot Web Tools.</li>
-                                <li>Worked on software (IsaacSim, Gazebo) and hardware (assembly, PID control) for AMRs.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Job 3: IIT Palakkad Internship -->
-                 <div class="relative flex items-start">
-                     <div class="w-10 flex-shrink-0 text-center">
-                        <div class="bg-slate-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">IIT</div>
-                    </div>
-                    <div class="ml-6 flex-grow">
-                        <div class="card p-6">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h3 class="text-xl font-semibold text-slate-900">Summer Intern</h3>
-                                    <p class="text-slate-700 font-medium">IIT Palakkad I-Hub Foundation</p>
-                                </div>
-                                <p class="text-sm text-slate-500">May 2022 - July 2022</p>
-                            </div>
-                            <ul class="mt-4 list-disc list-inside text-slate-600 space-y-2">
-                                <li>Worked on the fabrication of components for a solar-powered glider capable of continuous flight.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="mb-20 md:mb-24">
-            <h2 class="text-3xl font-bold section-title mb-10 text-center">Education</h2>
-            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-slate-200">
-                
-                <!-- Education 1: IIT Palakkad -->
-                <div class="relative flex items-start">
-                    <div class="w-10 flex-shrink-0 text-center">
-                        <div class="bg-slate-800 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">IIT</div>
-                    </div>
-                    <div class="ml-6 flex-grow">
-                        <div class="card p-6">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h3 class="text-xl font-semibold text-slate-900">B.Tech in Mechanical Engineering</h3>
-                                    <p class="text-slate-700 font-medium">Indian Institute of Technology, Palakkad</p>
-                                </div>
-                                <p class="text-sm text-slate-500">2020 - 2024</p>
-                            </div>
-                            <p class="mt-4 text-slate-600">Cumulative GPA: 9.22 / 10.0</p>
-                        </div>
-                    </div>
-                </div>
-
-        <!-- Projects Section -->
-        <section id="projects" class="mb-20 md:mb-24">
-            <h2 class="text-3xl font-bold section-title mb-10 text-center">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Project 1: Cosmo Logistics -->
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Cosmo Logistics</h3>
-                    <p class="text-slate-600 mb-4">Warehouse automation project for an IIT-Bombay hackathon. Involved UR5 manipulators, computer vision (Aruco markers), and a 4WD mobile robot using ROS2 NAV2 stack with EKF sensor fusion.</p>
-                    <!-- DEMO VIDEO: Replace the src attribute with your video embed URL -->
-                    <div class="video-container mb-4">
-                        <iframe src="" title="Cosmo Logistics Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">View on GitHub &rarr;</a>
-                </div>
-
-                <!-- Project 2: BB-8 Droid Replica -->
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-2">BB-8 Droid Replica</h3>
-                    <p class="text-slate-600 mb-4">A functional replica of the spherical BB-8 droid using a hamster wheel mechanism. Integrated Husky lens for object following capabilities and performed structural simulations in Fusion360.</p>
-                    <!-- DEMO VIDEO: Replace the src attribute with your video embed URL -->
-                    <div class="video-container mb-4">
-                         <iframe src="" title="BB-8 Droid Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                     <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">View Project Details &rarr;</a>
-                </div>
-
-                <!-- Project 3: Windshaper -->
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Windshaper</h3>
-                    <p class="text-slate-600 mb-4">Designed and developed an in-house windshaper to generate various wind profiles. Utilized Fusion 360 for design, Ansys Fluent for simulation, and fabricated a prototype with BLDC motors.</p>
-                    <!-- DEMO VIDEO: Replace the src attribute with your video embed URL -->
-                    <div class="video-container mb-4">
-                        <iframe src="" title="Windshaper Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                     <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">View Project Details &rarr;</a>
-                </div>
-
-                <!-- Project 4: Solar Powered Glider -->
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Solar Powered Glider</h3>
-                    <p class="text-slate-600 mb-4">Developed a prototype solar-powered glider for acquiring high-altitude atmospheric data. Performed structural analysis on glider components using Ansys and Fusion360.</p>
-                    <!-- DEMO VIDEO: Replace the src attribute with your video embed URL -->
-                    <div class="video-container mb-4">
-                        <iframe src="" title="Solar Glider Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                     <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">View Project Details &rarr;</a>
-                </div>
-
-            </div>
-        </section>
-        
-        <!-- Skills Section -->
-        <section id="skills" class="mb-20 md:mb-24">
-            <h2 class="text-3xl font-bold section-title mb-10 text-center">Technical Skills</h2>
-            <div class="card p-8">
-                <div class="flex flex-wrap justify-center gap-4">
-                    <!-- Add your skills as tags -->
-                    <span class="tag">NVIDIA IsaacSim</span>
-                    <span class="tag">ROS & ROS2</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">C++</span>
-                    <span class="tag">PyTorch</span>
-                    <span class="tag">TensorFlow</span>
-                    <span class="tag">NAV2</span>
-                    <span class="tag">Moveit2</span>
-                    <span class="tag">OpenCV</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">AWS</span>
-                    <span class="tag">Gazebo Sim</span>
-                    <span class="tag">Fusion 360</span>
-                    <span class="tag">Solidworks</span>
-                    <span class="tag">Ansys</span>
-                    <span class="tag">MicroROS</span>
-                    <span class="tag">Robot Web Tools</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="text-center">
-            <h2 class="text-3xl font-bold section-title mb-4">Contact</h2>
-            <p class="max-w-xl mx-auto text-slate-600 mb-8">
-                I'm always open to discussing new projects, research, or opportunities in robotics and automation.
-            </p>
-            <a href="mailto:labeebranassar@gmail.com" class="inline-block bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg hover:bg-slate-900 transition-all shadow-lg">
-                Email Me
-            </a>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 mt-20 md:mt-24">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-slate-500">
-            <p>&copy; 2024 Labeeb Nassar. All Rights Reserved.</p>
+        <div>
+          <h2>Tech Stack</h2>
+          <div class="skills">
+            <span>Python</span>
+            <span>C++</span>
+            <span>C</span>
+            <span>ROS2</span>
+            <span>NAV2</span>
+            <span>MoveIt2</span>
+            <span>PX4-Autopilot</span>
+            <span>MAVSDK</span>
+            <span>MicroROS</span>
+            <span>OpenCV</span>
+            <span>TensorFlow</span>
+            <span>PyTorch</span>
+            <span>YOLOv8</span>
+            <span>Scikit-Learn</span>
+            <span>NVIDIA IsaacSim</span>
+            <span>Gazebo Sim</span>
+            <span>ESP32</span>
+            <span>Raspberry Pi</span>
+            <span>Docker</span>
+            <span>AWS</span>
+            <span>Fusion 360</span>
+            <span>SolidWorks</span>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <section id="experience">
+      <div class="container stack">
+        <div>
+          <h2>Experience</h2>
+          <h3>Developer-III · UST · July 2024 – Present</h3>
+          <ul>
+            <li>Develop robotics automation solutions for drones and mobile robots using ROS2, NAV2, PX4, MAVSDK, and MicroROS, with focus on reliability and real-world deployment.</li>
+            <li>Designed and implemented a warehouse digital twin simulation in NVIDIA IsaacSim for assembly workflows with Cobots and AMRs to analyze throughput and bottlenecks.</li>
+            <li>Work on embedded robotic platforms using micro-controllers and companion computers, integrating sensing, navigation, and control modules for autonomous operation.</li>
+            <li>Maintain technical documentation for reproducibility and cross-team knowledge transfer.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container stack">
+        <div>
+          <h2>Projects</h2>
+        </div>
+
+        <article class="project">
+          <div class="project-top">
+            <h3>Computer Vision Based PCT-MMSE Automated Evaluator</h3>
+            <p>Designed and deployed a classical computer vision pipeline to automate scoring of the MMSE Pentagon-Copying Test for Alzheimer’s cognitive assessment.</p>
+            <ul>
+              <li>Improved agreement with baseline annotations from 60% to ~76–80% by re-engineering evaluation logic using structured geometric reasoning and rule-based validation.</li>
+              <li>Implemented preprocessing with illumination normalization, adaptive thresholding, morphology, and Canny edge detection.</li>
+              <li>Built geometric reconstruction using Hough Transform, custom line merging, convex hull, polygon approximation, and intersection analysis.</li>
+              <li>Developed a search-based unravelling algorithm to separate overlapping pentagon structures under noisy drawing conditions.</li>
+              <li>Integrated a custom-trained YOLOv8 object detection model with 90–92% mAP@50 to isolate hand-drawn ROIs prior to evaluation.</li>
+              <li>Delivered a deterministic, production-ready scoring module with structured reporting.</li>
+            </ul>
+            <div class="project-links">
+              <span>Add project link</span>
+              <span>Add demo link</span>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-slot">
+              <div class="media-placeholder">Add video demo here</div>
+              <div class="media-meta">
+                <h4>Video Demo</h4>
+                <p>Paste a YouTube iframe or video tag for pipeline walkthroughs or result demos.</p>
+              </div>
+            </div>
+            <div class="media-slot">
+              <div class="media-placeholder">Add image / result snapshot here</div>
+              <div class="media-meta">
+                <h4>Image / Output</h4>
+                <p>Use this space for sample input, geometric overlays, or scoring outputs.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <h3>Vision Based Quality Control Pipeline For Fruits</h3>
+            <p>Developed a lightweight computer vision module for automated quality control of strawberries and grapes for real-world retail workflows.</p>
+            <ul>
+              <li>Focused on red grapes, building an image processing pipeline for background removal and defect masking using classical vision and custom ML models.</li>
+              <li>Prototyped a high-accuracy segmentation pipeline using OWLv2 + SAM-ViT-H, but found it unsuitable for deployment due to hardware constraints.</li>
+              <li>Delivered a production-ready solution by custom-training rembg with a U²-Net backbone, reducing inference time to ~4–5s per image on CPU while maintaining strong defect segmentation performance.</li>
+              <li>Balanced accuracy and efficiency through extensive testing and optimization for CPU-only client systems.</li>
+            </ul>
+            <div class="project-links">
+              <span>Add project link</span>
+              <span>Add demo link</span>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-slot">
+              <div class="media-placeholder">Add video demo here</div>
+              <div class="media-meta">
+                <h4>Video Demo</h4>
+                <p>Show background removal, defect masking, or inference comparisons.</p>
+              </div>
+            </div>
+            <div class="media-slot">
+              <div class="media-placeholder">Add image / segmentation result here</div>
+              <div class="media-meta">
+                <h4>Image / Output</h4>
+                <p>Use this for defect masks, segmentation examples, or QC samples.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <h3>NVIDIA IsaacSim Based Warehouse Model And Simulation</h3>
+            <p>Developed a warehouse simulation environment in NVIDIA IsaacSim as a proof-of-concept digital twin for a PCB manufacturing plant.</p>
+            <ul>
+              <li>Researched and mapped the PCB assembly line process, then designed custom simulation models to replicate assembly tasks and material flow.</li>
+              <li>Implemented FSM-based pick-and-place tasks on a simulated UR10 robotic manipulator using NVIDIA Decider Network.</li>
+              <li>Designed a custom 4-wheeled omni-directional mobile robot automated via ROS 2 NAV2 for package transport in the simulated warehouse.</li>
+              <li>Contributed to combined manipulation and mobile robot logistics for process monitoring and optimization.</li>
+            </ul>
+            <div class="project-links">
+              <span>Add project link</span>
+              <span>Add demo link</span>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-slot">
+              <div class="media-placeholder">Add simulation video here</div>
+              <div class="media-meta">
+                <h4>Video Demo</h4>
+                <p>Show warehouse flow, UR10 task execution, or digital twin operation.</p>
+              </div>
+            </div>
+            <div class="media-slot">
+              <div class="media-placeholder">Add warehouse image / scene render here</div>
+              <div class="media-meta">
+                <h4>Image / Output</h4>
+                <p>Use this for scene renders, task snapshots, or layout images.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <h3>Autonomous Drone System</h3>
+            <p>Engineered an autonomous UAV platform using Pixhawk 6C and Raspberry Pi 4B with PX4-Avoidance and Intel RealSense D435 for real-time obstacle avoidance.</p>
+            <ul>
+              <li>Implemented 3DVFH+* local path planning and automated survey missions via QGroundControl for plantation monitoring.</li>
+              <li>Streamed live drone feeds to ERP systems for analytics including crop health, worker monitoring, and compliance tracking.</li>
+              <li>Conducted photogrammetry-based 3D reconstruction to benchmark flight stability and localization performance.</li>
+            </ul>
+            <div class="project-links">
+              <span>Add project link</span>
+              <span>Add demo link</span>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-slot">
+              <div class="media-placeholder">Add drone demo video here</div>
+              <div class="media-meta">
+                <h4>Video Demo</h4>
+                <p>Show survey flight, avoidance behavior, or mission execution.</p>
+              </div>
+            </div>
+            <div class="media-slot">
+              <div class="media-placeholder">Add drone image / reconstruction output here</div>
+              <div class="media-meta">
+                <h4>Image / Output</h4>
+                <p>Use this for flight frames, depth views, or 3D reconstruction results.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <h3>Autonomous Mobile Robot</h3>
+            <p>Designed a 4-wheeled mecanum-drive AMR with localization, navigation, and control integration for physical deployment.</p>
+            <ul>
+              <li>Implemented PID velocity control for smooth motion response.</li>
+              <li>Improved localization accuracy through EKF-based sensor fusion using wheel odometry, gyro, and magnetometer data.</li>
+              <li>Diagnosed and resolved an MPU9250 IMU driver issue, enabling proper AK8963 magnetometer integration for reliable sensor fusion.</li>
+              <li>Integrated ROS2 NAV2 with SLAM and AMCL-based localization for waypoint navigation.</li>
+              <li>Benchmarked DWB–NavFn and MPPI–NavFn planner configurations on physical hardware.</li>
+            </ul>
+            <div class="project-links">
+              <span>Add project link</span>
+              <span>Add demo link</span>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-slot">
+              <div class="media-placeholder">Add robot demo video here</div>
+              <div class="media-meta">
+                <h4>Video Demo</h4>
+                <p>Show AMR motion, waypoint navigation, or planner behavior.</p>
+              </div>
+            </div>
+            <div class="media-slot">
+              <div class="media-placeholder">Add robot image / localization output here</div>
+              <div class="media-meta">
+                <h4>Image / Output</h4>
+                <p>Use this for hardware photos, RViz snapshots, or trajectory visuals.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <h3>Mobile Manipulator Simulation For Farming Setups</h3>
+            <p>Developed a simulation proof-of-concept for a hydroponics-based vertical farming system to demonstrate robotics integration for agricultural automation.</p>
+            <ul>
+              <li>Designed a custom mobile manipulator with a 4-WD base and 5-DOF arm equipped with an end-effector camera for crop surveillance and monitoring.</li>
+              <li>Automated arm trajectories using MoveIt and implemented base guidance with a P-controller for precise position control.</li>
+              <li>Built the simulation environment in NVIDIA IsaacSim and interfaced it with ROS 2 for motion planning, perception, and control workflows.</li>
+              <li>Validated feasibility for robotics-assisted inspection and monitoring in hydroponic vertical farming setups.</li>
+            </ul>
+            <div class="project-links">
+              <span>Add project link</span>
+              <span>Add demo link</span>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-slot">
+              <div class="media-placeholder">Add farming simulation video here</div>
+              <div class="media-meta">
+                <h4>Video Demo</h4>
+                <p>Show mobile manipulator motion, crop inspection flow, or simulated tasks.</p>
+              </div>
+            </div>
+            <div class="media-slot">
+              <div class="media-placeholder">Add simulation image / scene render here</div>
+              <div class="media-meta">
+                <h4>Image / Output</h4>
+                <p>Use this for system renders, MoveIt snapshots, or end-effector views.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container two-col">
+        <div>
+          <h2>Education</h2>
+          <h3>Indian Institute of Technology Palakkad</h3>
+          <p>Bachelor’s of Technology in Mechanical Engineering · 2020–2024 · GPA: 9.22</p>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <p>
+            Add your real LinkedIn, GitHub, project links, and demo URLs before publishing this on GitHub Pages.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Single-file HTML portfolio page.</div>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+          });
+        }
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
 </body>
 </html>
