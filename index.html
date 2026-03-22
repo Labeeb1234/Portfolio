@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Labeeb Nassar</title>
-  <meta name="description" content="Labeeb Nassar — robotics, autonomous systems, computer vision, and simulation portfolio." />
+  <meta name="description" content="Labeeb Nassar — Robotics | Autonomous systems | Computer Vision | Machine Learning " />
   <style>
     :root {
       --bg: #ffffff;
@@ -273,32 +273,146 @@
     }
   </style>
 </head>
+
+
 <body>
+  <style>
+    .skills {
+      display: block;
+    }
+
+    .skills > div {
+      margin-bottom: 1.4rem;
+    }
+
+    .skills h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .skills span {
+      display: inline-block;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-right: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .contact-btn {
+      background: none;
+      border: none;
+      font: inherit;
+      color: var(--text);
+      cursor: pointer;
+      padding: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-content {
+      position: absolute;
+      top: 120%;
+      left: 0;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.4rem 0.6rem;
+
+      opacity: 0;
+      transform: translateY(-6px);
+      pointer-events: none;
+
+      transition: all 0.2s ease;
+      min-width: 140px;
+      z-index: 20;
+    }
+
+    .contact-dropdown:hover .contact-content {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .email-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .email-btn {
+      background: none;
+      border: none;
+      font: inherit;
+      color: var(--text);
+      cursor: pointer;
+      padding: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .email-content {
+      position: absolute;
+      top: 120%;
+      left: 0;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.4rem 0.6rem;
+
+      opacity: 0;
+      transform: translateY(-6px);
+      pointer-events: none;
+
+      transition: all 0.2s ease;
+      min-width: 200px;
+      z-index: 20;
+    }
+
+    .email-dropdown:hover .email-content {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  </style>
+
   <nav class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#home">Labeeb Nassar</a>
       <div class="nav-links">
+        <a href="#home">Contact</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
   <header id="home">
     <div class="container">
-      <div class="eyebrow">Robotics · Autonomous Systems · Computer Vision</div>
-      <h1>Building deployable robotic systems, perception pipelines, and simulation-driven automation workflows.</h1>
-      <p class="lead">
-        I am Labeeb Nassar, a robotics engineer working across autonomous systems, robot simulation, computer vision, embedded integration, and deployment-focused automation.
-      </p>
+      <div class="eyebrow">Robotics · Autonomous Systems · Computer Vision · Machine Learning</div>
+      <!-- <h1>Building deployable robotic systems, perception pipelines, and simulation-driven automation workflows.</h1> -->
+      <!-- <p class="lead">
+        Labeeb Nassar, a robotics engineer focused on autonomous systems, computer vision, and machine learning, with a strong interest in reinforcement learning and imitation learning for intelligent robotic behavior.
+      </p> -->
       <div class="meta">
-        <span>Thrissur, Kerala, India</span>
-        <a href="mailto:labeebranassar@gmail.com">labeebranassar@gmail.com</a>
-        <a href="tel:+919633301112">+91-9633301112</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
+        <!-- <span>Kerala, India</span> -->
+        <div class="email-dropdown">
+          <button class="email-btn">Email</button>
+          <div class="email-content">
+            <a href="mailto:labeebranassar@gmail.com">labeebranassar@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-dropdown">
+          <button class="contact-btn">Contact No.</button>
+          <div class="contact-content">
+            <a href="tel:+919633301112">+91 96333 01112</a>
+          </div>
+        </div>
+        <a href="www.linkedin.com/in/labeeb-nassar">LinkedIn</a>
+        <a href="https://github.com/Labeeb1234">GitHub</a>
       </div>
     </div>
   </header>
@@ -309,36 +423,98 @@
         <div>
           <h2>About</h2>
           <p>
-            B.Tech in Mechanical Engineering from IIT Palakkad with a GPA of 9.22. My current work at UST focuses on robotics automation for drones and mobile robots using ROS2, NAV2, PX4, MAVSDK, and MicroROS, along with digital twin simulation in NVIDIA IsaacSim and embedded robotic platform integration.
+            I am a B.Tech graduate in Mechanical Engineering from <a href="https://iitpkd.ac.in" target="_blank" rel="noopener noreferrer">Indian Institute of Technology, Palakkad</a> (in 2024)
+            with a strong focus on robotics, autonomous systems, and control. Experience spans simulation-driven development to real-world hardware-software integration across quadcopters, wheeled mobile robots (holonomic and non-holonomic), robotic manipulators, and mobile manipulators. Work includes system modeling, control, firmware development, and perception pipelines, along with motion planning, and localization. Also involved in developing computer vision systems for robotics and standalone applications, combining deep learning approaches with classical image processing techniques.
           </p>
         </div>
+
         <div>
-          <h2>Tech Stack</h2>
+          <h2>Technical Skills</h2>
           <div class="skills">
-            <span>Python</span>
-            <span>C++</span>
-            <span>C</span>
-            <span>ROS2</span>
-            <span>NAV2</span>
-            <span>MoveIt2</span>
-            <span>PX4-Autopilot</span>
-            <span>MAVSDK</span>
-            <span>MicroROS</span>
-            <span>OpenCV</span>
-            <span>TensorFlow</span>
-            <span>PyTorch</span>
-            <span>YOLOv8</span>
-            <span>Scikit-Learn</span>
-            <span>NVIDIA IsaacSim</span>
-            <span>Gazebo Sim</span>
-            <span>ESP32</span>
-            <span>Raspberry Pi</span>
-            <span>Docker</span>
-            <span>AWS</span>
-            <span>Fusion 360</span>
-            <span>SolidWorks</span>
+            
+            <div>
+              <h3>Robotics & Autonomous Systems</h3>
+              <div class="skills">
+                <span>ROS2</span>
+                <span>ROS2-NAV2</span>
+                <span>MoveIt2</span>
+                <span>PX4-Autopilot</span>
+                <span>MAVSDK</span>
+                <span>Behavior Trees</span>
+                <span>Finite State Machines</span>
+                <span>NVIDIA Isaac Cortex</span>
+              </div>
+            </div>
+
+            <div>
+              <h3>Simulation</h3>
+              <div class="skills">
+                <span>NVIDIA IsaacSim</span>
+                <span>NVIDIA IsaacLab</span>
+                <span>Gazebo Sim</span>
+                <span>Ansys Structural</span>
+                <span>Ansys Fluent</span>
+              </div>
+            </div>
+
+            <div>
+              <h3>Computer Vision & Machine Learning</h3>
+              <div class="skills">
+                <span>OpenCV</span>
+                <span>PyTorch</span>
+                <span>TensorFlow</span>
+                <span>YOLO-Models</span>
+                <span>Scikit-Learn</span>
+                <span>Scikit-Image</span>
+              </div>
+            </div>
+
+            <div>
+              <h3>Embedded & Hardware Systems</h3>
+              <div class="skills">
+                <span>ESP32</span>
+                <span>Raspberry Pi</span>
+                <span>Sensor Integration</span>
+                <span>Firmware Development</span>
+                <span>Arduino</span>
+                <span>MicroROS</span>
+                <span>MAVLINK</span>
+                <span>PX4-Autopilot</span>
+                <span>Ardupilot</span>
+              </div>
+            </div>
+
+            <div>
+              <h3>Mechanical Design & Just Design</h3>
+              <div class="skills">
+                <span>Autodesk Fusion 360</span>
+                <span>SolidWorks</span>
+                <span>Autodesk AutoCAD</span>
+                <span>Blender(Just Design not mechanical)</span>
+              </div>
+            </div>
+
+            <div>
+              <h3>Programming</h3>
+              <div class="skills">
+                <span>C++</span>
+                <span>Python</span>
+                <span>C</span>
+              </div>
+            </div>
+
+            <div>
+              <h3>Tools & Platforms</h3>
+              <div class="skills">
+                <span>Docker</span>
+                <span>AWS</span>
+                <span>GIT</span>
+              </div>
+            </div>
+
           </div>
         </div>
+
       </div>
     </section>
 
@@ -346,7 +522,7 @@
       <div class="container stack">
         <div>
           <h2>Experience</h2>
-          <h3>Developer-III · UST · July 2024 – Present</h3>
+          <h3>Developer-III · UST · July 2024 - Present</h3>
           <ul>
             <li>Develop robotics automation solutions for drones and mobile robots using ROS2, NAV2, PX4, MAVSDK, and MicroROS, with focus on reliability and real-world deployment.</li>
             <li>Designed and implemented a warehouse digital twin simulation in NVIDIA IsaacSim for assembly workflows with Cobots and AMRs to analyze throughput and bottlenecks.</li>
@@ -565,21 +741,16 @@
       </div>
     </section>
 
-    <section id="contact">
-      <div class="container two-col">
+    <section id="languages">
+      <div class="container stack">
         <div>
-          <h2>Education</h2>
-          <h3>Indian Institute of Technology Palakkad</h3>
-          <p>Bachelor’s of Technology in Mechanical Engineering · 2020–2024 · GPA: 9.22</p>
-        </div>
-        <div>
-          <h2>Contact</h2>
-          <p>
-            Add your real LinkedIn, GitHub, project links, and demo URLs before publishing this on GitHub Pages.
-          </p>
+          <h2>Languages</h2>
+          <p>English (Fluent)</p>
+          <p>German (Beginner — currently learning)</p>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
