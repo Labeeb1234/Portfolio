@@ -376,6 +376,20 @@
       transform: translateY(0);
       pointer-events: auto;
     }
+
+    .media-grid.three-inline {
+      grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 per row for bigger images */
+      gap: 1rem;
+    }
+
+
+    @media (max-width: 820px) {
+      .media-grid.three-inline {
+        grid-template-columns: 1fr; /* stack vertically on smaller screens */
+      }
+    }
+
+
   </style>
 
   <nav class="nav">
@@ -423,8 +437,8 @@
         <div>
           <h2>About</h2>
           <p>
-            A B.Tech graduate in Mechanical Engineering from <a href="https://iitpkd.ac.in" target="_blank" rel="noopener noreferrer">Indian Institute of Technology, Palakkad</a> (in 2024)
-            with a strong focus on robotics, autonomous systems, and control. Experience spans simulation-driven development to real-world hardware-software integration across quadcopters, wheeled mobile robots (holonomic and non-holonomic), robotic manipulators, and mobile manipulators. Work includes system modeling, control, firmware development, and perception pipelines, along with motion planning, and localization. Also involved in developing computer vision systems for robotics and standalone applications, combining deep learning approaches with classical image processing techniques.
+            I am a B.Tech graduate in Mechanical Engineering from <a href="https://iitpkd.ac.in" target="_blank" rel="noopener noreferrer">Indian Institute of Technology, Palakkad</a> (in 2024)
+            with a strong focus on robotics, autonomous systems, motion planning and control. Experience spans simulation-driven development to real-world hardware-software integration across quadcopters, wheeled mobile robots (holonomic and non-holonomic), robotic manipulators, and mobile manipulators. Work includes system modeling, control, firmware development, and perception pipelines, along with motion planning, and localization. Also involved in developing computer vision systems for robotics and standalone applications, combining deep learning approaches with classical image processing techniques.
           </p>
         </div>
 
@@ -541,40 +555,44 @@
 
         <article class="project">
           <div class="project-top">
-            <h3>Computer Vision Based PCT-MMSE Automated Evaluator</h3>
+            <h3>Automated Evaluator For PCT-MMSE Using Computer Vision Techniques</h3>
             <p>Designed and deployed a classical computer vision pipeline to automate scoring of the MMSE Pentagon-Copying Test for Alzheimer’s cognitive assessment.</p>
             <ul>
-              <li>Improved agreement with baseline annotations from 60% to ~76–80% by re-engineering evaluation logic using structured geometric reasoning and rule-based validation.</li>
               <li>Implemented preprocessing with illumination normalization, adaptive thresholding, morphology, and Canny edge detection.</li>
               <li>Built geometric reconstruction using Hough Transform, custom line merging, convex hull, polygon approximation, and intersection analysis.</li>
               <li>Developed a search-based unravelling algorithm to separate overlapping pentagon structures under noisy drawing conditions.</li>
               <li>Integrated a custom-trained YOLOv8 object detection model with 90–92% mAP@50 to isolate hand-drawn ROIs prior to evaluation.</li>
               <li>Delivered a deterministic, production-ready scoring module with structured reporting.</li>
+              <li>Improved agreement with baseline annotations from 60% to ~76–80% by re-engineering evaluation logic using structured geometric reasoning and rule-based validation.</li>
             </ul>
             <div class="project-links">
-              <span>Add project link</span>
-              <span>Add demo link</span>
+              <a href="https://github.com/Labeeb1234/PCT-QIP?tab=readme-ov-file#pct-analysis-using-computer-vision" target="_blank" rel="noopener noreferrer">
+                GitHub Repo
+              </a>
             </div>
           </div>
-          <div class="media-grid">
+          
+          <div class="media-grid three-inline">
             <div class="media-slot">
-              <div class="media-placeholder">Add video demo here</div>
-              <div class="media-meta">
-                <h4>Video Demo</h4>
-                <p>Paste a YouTube iframe or video tag for pipeline walkthroughs or result demos.</p>
+              <div class="media-placeholder">
+                <img src="./projects/images/PCT-QIP_compvis/531448723-2eff8846-d931-4244-9804-32654442e19c.png" alt="Result_1">
               </div>
-            </div>
-            <div class="media-slot">
-              <div class="media-placeholder">Add image / result snapshot here</div>
               <div class="media-meta">
-                <h4>Image / Output</h4>
-                <p>Use this space for sample input, geometric overlays, or scoring outputs.</p>
+                <p>output with annotated geometric overlays</p>
+              </div>
+            </div>        
+            <div class="media-slot">
+              <div class="media-placeholder">
+                <img src="./projects/images/PCT-QIP_compvis/567215210-32d23ea3-8ec6-46fd-bf4d-3ad2c12daaa0.png" alt="Result_2">
+              </div>
+              <div class="media-meta">
+                <p>output with annotated geometric overlays.</p>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="project">
+        <!-- <article class="project">
           <div class="project-top">
             <h3>Vision Based Quality Control Pipeline For Fruits</h3>
             <p>Developed a lightweight computer vision module for automated quality control of strawberries and grapes for real-world retail workflows.</p>
@@ -605,7 +623,41 @@
               </div>
             </div>
           </div>
+        </article> -->
+
+
+        <article class="project">
+          <div class="project-top">
+            <h3>Autonomous Drone System</h3>
+            <p>Engineered an autonomous UAV platform using Pixhawk 6C and Raspberry Pi 4B with PX4-Avoidance and Intel RealSense D435 for real-time obstacle avoidance.</p>
+            <ul>
+              <li>Implemented 3DVFH+* local path planning and automated survey missions via QGroundControl for plantation monitoring.</li>
+              <li>Streamed live drone feeds to ERP systems for analytics including crop health, worker monitoring, and compliance tracking.</li>
+              <li>Conducted photogrammetry-based 3D reconstruction to benchmark flight stability and localization performance.</li>
+            </ul>
+            <div class="project-links">
+              <span>Add project link</span>
+              <span>Add demo link</span>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-slot">
+              <div class="media-placeholder">Add drone demo video here</div>
+              <div class="media-meta">
+                <h4>Video Demo</h4>
+                <p>Show survey flight, avoidance behavior, or mission execution.</p>
+              </div>
+            </div>
+            <div class="media-slot">
+              <div class="media-placeholder">Add drone image / reconstruction output here</div>
+              <div class="media-meta">
+                <h4>Image / Output</h4>
+                <p>Use this for flight frames, depth views, or 3D reconstruction results.</p>
+              </div>
+            </div>
+          </div>
         </article>
+
 
         <article class="project">
           <div class="project-top">
@@ -640,37 +692,7 @@
           </div>
         </article>
 
-        <article class="project">
-          <div class="project-top">
-            <h3>Autonomous Drone System</h3>
-            <p>Engineered an autonomous UAV platform using Pixhawk 6C and Raspberry Pi 4B with PX4-Avoidance and Intel RealSense D435 for real-time obstacle avoidance.</p>
-            <ul>
-              <li>Implemented 3DVFH+* local path planning and automated survey missions via QGroundControl for plantation monitoring.</li>
-              <li>Streamed live drone feeds to ERP systems for analytics including crop health, worker monitoring, and compliance tracking.</li>
-              <li>Conducted photogrammetry-based 3D reconstruction to benchmark flight stability and localization performance.</li>
-            </ul>
-            <div class="project-links">
-              <span>Add project link</span>
-              <span>Add demo link</span>
-            </div>
-          </div>
-          <div class="media-grid">
-            <div class="media-slot">
-              <div class="media-placeholder">Add drone demo video here</div>
-              <div class="media-meta">
-                <h4>Video Demo</h4>
-                <p>Show survey flight, avoidance behavior, or mission execution.</p>
-              </div>
-            </div>
-            <div class="media-slot">
-              <div class="media-placeholder">Add drone image / reconstruction output here</div>
-              <div class="media-meta">
-                <h4>Image / Output</h4>
-                <p>Use this for flight frames, depth views, or 3D reconstruction results.</p>
-              </div>
-            </div>
-          </div>
-        </article>
+
 
         <article class="project">
           <div class="project-top">
@@ -738,6 +760,127 @@
             </div>
           </div>
         </article>
+
+
+
+        <article class="project">
+          <div class="project-top">
+            <h3>Cosmo Logistics Simulation (Hackathon Project)</h3>
+            <p>Simulation and software development for warehouse automation in a lunar-base themed hackathon organized by IIT Bombay (E-yantra).</p>
+            <ul>
+              <li>Integrated UR5 robotic manipulators with computer vision-based ArUco marker detection for pick-and-place tasks.</li>
+              <li>Developed a 4WD automated mobile robot using ROS2 NAV2 stack and EKF sensor fusion for localization.</li>
+              <li>Focused on both simulation and real-world hardware integration for logistics automation.</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/Labeeb1234/CosmoLogistic_Hackathon/tree/main" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+            </div>
+          </div>
+          <div class="media-grid three-inline">
+            <div class="media-slot">
+              <div class="media-placeholder">
+                <iframe 
+                  src="https://www.youtube.com/embed/VIDEO_ID_1" 
+                  title="UR5 Pick & Place Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="media-meta">
+                <p>UR5 Manipulator Pick-and-Place with ArUco Detection</p>
+              </div>
+            </div>        
+
+            <div class="media-slot">
+              <div class="media-placeholder">
+                <iframe 
+                  src="https://www.youtube.com/embed/JmQVWqmK0H8?rel=0" 
+                  title="AMR Navigation Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="media-meta">
+                <p>AMR Navigating the warehouse to take a shelf from start to goal</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <h3>Kinematic & Dynamic Control of Custom Designed 4-DOF Manipulator (Simulation)</h3>
+            <p>Designed and simulated a 4-DOF stationary robotic manipulator with MATLAB-based kinematic and dynamic modeling.</p>
+            <ul>
+              <li>Modeled forward and inverse kinematics for open-loop and closed-loop waypoint control.</li>
+              <li>Implemented PD controllers for closed-loop waypoint trajectory tracking.</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://drive.google.com/drive/u/1/folders/18_WM5B5EpIjV2HqRIMXqNjytCC46O4R6" target="_blank" rel="noopener noreferrer">Repo Link</a>
+            </div>
+          </div>
+          <div class="media-grid three-inline">
+            <div class="media-slot">
+              <div class="media-placeholder">
+                <img src="./projects/images/robotic_manipulators_course/Screenshot 2026-04-09 223957.png" alt="Custom 4DOF Manipulator">
+              </div>
+              <div class="media-meta">
+                <p>Design of the 4-DOF Manipulator</p>
+              </div>
+            </div>        
+            <div class="media-slot">
+              <div class="media-placeholder">
+                <img src="./projects/images/robotic_manipulators_course/Screenshot 2026-04-09 224023.png" alt="Frame arrangement Diagram">
+              </div>
+              <div class="media-meta">
+                <p>Frame Arrangement Diagram</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <h3>Wheeled Mobile Robots Simulation</h3>
+            <p>Course project on kinematic and dynamic simulation of a four-wheel omni-drive robot using MATLAB.</p>
+            <ul>
+              <li>Selected a specific robot configuration and simulated its kinematics and dynamics.</li>
+              <li>Performed control simulations for motion accuracy and trajectory tracking.</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://drive.google.com/drive/u/1/folders/1gITNa1o1S6moZwAXjpoGcHrg4pgP0kFI" target="_blank" rel="noopener noreferrer">Project Repo</a>
+            </div>
+          </div>
+          <div class="media-grid three-inline">
+            <div class="media-slot">
+              <div class="media-placeholder">
+                <img src="./projects/images/WMR_course/Screenshot 2026-04-09 225535.png" alt="Simulation of a 4-Wheeled Omni Drive Robot">
+              </div>
+              <div class="media-meta">
+                <p>Simulation Concept of a 4-Wheeled Omni Drive Robor</p>
+              </div>
+            </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <h3>Solar Powered Glider</h3>
+            <p>
+              Worked on the design and development of an unmanned solar-powered glider for acquiring atmospheric data at high altitudes. 
+              Focused on selecting low-drag airfoils for the main as well as the tail wings to optimize the lift-to-drag ratio, enabling efficient flight performance and extended endurance.
+            </p>
+            <ul>
+              <li>Designed and fabricated a prototype glider, including structural analysis of landing gear using Ansys and Fusion 360.</li>
+              <li>Performed material selection to ensure controlled deflection under load while maintaining lightweight and structural integrity.</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://docs.google.com/document/d/1QX4viyJTmhl2CF9dg-wnAOE0XY0uguXS/edit" target="_blank" rel="noopener noreferrer">
+                Project Report
+              </a>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
